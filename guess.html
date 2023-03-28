@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>Guess the number</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .container-fluid {
+            padding: 60px 50px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+
+        @media screen and (max-width: 768px) {
+            .col-sm-4 {
+                text-align: center;
+                margin: 25px 0;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="index.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+<meta name="robots" content="none,noarchive"/>
+</head>
+
+<body>
+    <div class="total">
+        <div class="container-fluid text-center bg-grey">
+            <h2>CheCK_lUCk</h2><br>
+            <h4>Guess the number</h4>
+            <p>Guess what computer thinking</p><br>
+            <div class="row text-center">
+                <div class="col-sm-6">
+                    <div class="thumbnail">
+                        <img src="https://m.media-amazon.com/images/I/715vwvP5ZEL.png" alt="one" width="400" height="300">
+                        <br>
+                        <p><strong>Enter the number</strong></p>
+
+                        <input class="text-center" id="userinput" type="text" /><br>
+                        <br>
+                        <button class="btn btn-primary" onclick="check()">Submit</button>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="thumbnail">
+                        <br>
+                        <br>
+                        <img src="https://static01.nyt.com/images/2021/09/30/fashion/29melting-face-emoji/29melting-face-emoji-mediumSquareAt3X-v2.jpg" alt="two" width="400" height="300">
+                        <p><strong>Result</strong></p>
+
+                        <p id="gameresult"><b>.......</b></p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let gameresult = document.getElementById("gameresult");
+        let userinput = document.getElementById("userinput");
+        let randomNumber = Math.ceil(Math.random() * 10);
+
+        function check() {
+            let number = parseInt(userinput.value);
+            if (number < randomNumber) {
+                gameresult.textContent = "Ufff it's low ,try again....!";
+                gameresult.style.color = "red";
+            } else if (number > randomNumber) {
+                gameresult.textContent = "Hey it's more than that try again...!";
+                gameresult.style.color = "red";
+            } else if (number === randomNumber) {
+                gameresult.textContent = "Yeah...you did it....!!!!!";
+                gameresult.style.color = "Green";
+            } else {
+                gameresult.textContent = "Please enter a valid input";
+                gameresult.style.color = "blue";
+            }
+        }
+    </script>
+<script src="index.js"></script>
+</body>
+
+</html>
